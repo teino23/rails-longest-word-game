@@ -1,0 +1,19 @@
+
+<div class= "center">
+<h1 class=title-new-game>New Game</h1>
+<ul class="list">
+  <% @letters.each do |letter| %>
+    <li><%= letter.capitalize %></li>
+  <% end %>
+</ul>
+</div>
+
+<div class="container">
+  <h1>Submit answer🚀</h1>
+
+  <form method = "post" action="/score" data-turbo="false">
+    <input type="text" name="words" >
+    <input type="submit" value="Go!">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  </form>
+</div>
